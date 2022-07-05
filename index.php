@@ -2,7 +2,8 @@
 
 if ($_GET['pass']=="lolaso") {
 
-	file_put_contents('log', $_SERVER['HTTP_X_FORWARDED_FOR'] . ", " . date("H:i d-m"));
+	file_put_contents('log', $_SERVER['REMOTE_ADDR'] . ", " . date("H:i d-m"));
+	echo $_SERVER["REMOTE_ADDR"];
 
 }
 else {
@@ -11,7 +12,7 @@ else {
 	$ip = substr($data,0,strpos($data,","));
 	$time = substr($data,strpos($data,","));
 	echo '<a href="http://' . $ip . '">' . $ip . '</a>' . $time . ' <br>';
-	echo $_SERVER["HTTP_X_FORWARDED_FOR"] . ", " . date("H:i d-m");
+	echo $_SERVER["REMOTE_ADDR"] . ", " . date("H:i d-m");
 	
 }
 

@@ -4,7 +4,7 @@ $data = file_get_contents('../log');
 $ip = substr($data,0,strpos($data,","));
 $path = $_GET['path'];
 
-if ($ip==$_SERVER['HTTP_X_FORWARDED_FOR']) {
+if ($ip==$_SERVER['REMOTE_ADDR']) {
 	$ip='192.168.0.4';
 }
 
