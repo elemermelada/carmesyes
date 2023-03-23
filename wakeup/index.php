@@ -11,6 +11,8 @@ if ($ip==$_SERVER['REMOTE_ADDR']) {
 	$ip='192.168.0.4';
 }
 
-echo '<meta http-equiv="refresh" content="0;url=http://' . $ip . '/' . $path . '">';
+$url = 'http://' . $ip . '/' . $path;
+echo file_get_contents($url);
+// echo '<meta http-equiv="refresh" content="0;url=' . $url . '">';
 
 ?>
