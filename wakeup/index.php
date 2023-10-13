@@ -7,12 +7,7 @@ $data = file_get_contents('../log');
 $ip = substr($data,0,strpos($data,","));
 $path = "tools/wake.php?addr=" . $addr;
 
-if ($ip==$_SERVER['REMOTE_ADDR']) {
-	$ip='192.168.0.4';
-}
-
 $url = 'http://' . $ip . '/' . $path;
 echo file_get_contents($url);
-// echo '<meta http-equiv="refresh" content="0;url=' . $url . '">';
 
 ?>
