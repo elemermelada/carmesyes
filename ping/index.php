@@ -27,6 +27,6 @@ if (!is_numeric($device_id)) {
 $query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
 echo $query;
 $result = $link->query($query);
-echo $result;
+printf("Select returned %d rows.\n", $result->num_rows);
 
 ?>
