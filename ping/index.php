@@ -18,7 +18,7 @@ if (!is_numeric($device_id)) {
 }
 
 // Perform request
-$query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
+$query = 'INSERT INTO `dbs12325432.carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
 
 mysqli_query($link, $query) or die(mysqli_error($link));
 
