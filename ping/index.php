@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 
 // Connect to DB
 require '../db.php';
+echo test();
 $link = db_connect();
 
 if ($link->connect_error) {

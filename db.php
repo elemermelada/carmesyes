@@ -1,4 +1,10 @@
 <?php
+
+function test()
+{
+
+    return "yeeees";
+}
 function db_connect()
 {
 
