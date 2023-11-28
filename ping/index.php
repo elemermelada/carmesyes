@@ -6,7 +6,11 @@
 require '../db.php';
 $link = db_connect();
 
-echo print_r($link);
+if ($link->connect_error) {
+    die('<p>Error al conectar con servidor MySQL: ' . $link->connect_error . '</p>');
+} else {
+    echo '<p>Se ha establecido la conexión al servidor MySQL con éxito.</p>';
+}
 
 // Grab parameters
 $device_id = $_GET['id'];
