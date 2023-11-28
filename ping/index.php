@@ -1,8 +1,12 @@
 <?php
 
+error_reporting(E_ALL);
+
 // Connect to DB
 require '../db.php';
 $link = db_connect();
+
+echo print_r($link);
 
 // Grab parameters
 $device_id = $_GET['id'];
