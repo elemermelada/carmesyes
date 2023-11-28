@@ -4,14 +4,7 @@ error_reporting(E_ALL);
 
 // Connect to DB
 require '../db.php';
-echo test();
 $link = db_connect();
-
-if ($link->connect_error) {
-    die('<p>Error al conectar con servidor MySQL: ' . $link->connect_error . '</p>');
-} else {
-    echo '<p>Se ha establecido la conexión al servidor MySQL con éxito.</p>';
-}
 
 // Grab parameters
 $device_id = $_GET['id'];
@@ -26,7 +19,7 @@ if (!is_numeric($device_id)) {
 
 // Perform request
 $query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
-echo $query;
+$query = 'SHOW TABLES';
 $result = $link->query($query);
 printf("Select returned %d rows.\n", $result->num_rows);
 
