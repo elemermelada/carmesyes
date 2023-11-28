@@ -19,7 +19,7 @@ if (!is_numeric($device_id)) {
 
 // Perform request
 $query = 'INSERT INTO `dbs12325432.carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
-$query = 'SELECT * FROM carmesyes_devices';
+$query = 'SELECT * FROM dbs12325432.carmesyes_devices';
 
 $result = $link->query($query);
 printf("Select returned %d rows.\n", $result->num_rows);
