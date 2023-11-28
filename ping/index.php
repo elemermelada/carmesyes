@@ -1,6 +1,6 @@
 <?php
 
-// error_reporting(E_ALL);
+error_reporting(E_ALL);
 
 // Connect to DB
 require '../db.php';
@@ -26,7 +26,7 @@ if (!is_numeric($device_id)) {
 // Perform request
 $query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
 echo $query;
-echo $result;
 $result = $link->query($query);
+echo $result;
 
 ?>
