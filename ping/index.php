@@ -28,6 +28,7 @@ $query = 'SELECT * FROM dbs12325432.carmesyes_devices';
 $result = $link->query($query);
 printf("Select returned %d rows.\n", $result->num_rows);
 
+echo 'ryyy';
 //mysqli_query($link, $query) or die(mysqli_error($link));
 
 
