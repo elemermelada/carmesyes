@@ -3,33 +3,37 @@
 error_reporting(E_ALL);
 
 // Connect to DB
-$config = json_decode(file_get_contents("db_config.json"), true);
-$host_name = $config['host_name'];
-$database = $config['database'];
-$user_name = $config['user_name'];
-$password = $config['password'];
-$link = new mysqli($host_name, $user_name, $password, $database);
+require '../db.php';
+$link = db_connect();
 
 // Grab parameters
 $device_id = $_GET['id'];
 $device_ip = $_SERVER['REMOTE_ADDR'];
 $date = new DateTime();
 
-// TODO - implement better SQL injection prevention measures??
+// Return error on invalid input
 if (!is_numeric($device_id)) {
     http_response_code(400);
+    echo 'Invalid device ID';
     exit();
 }
 
-// Perform request
-$query = 'INSERT INTO `dbs12325432.carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(), \'' . $device_ip . '\', \'' . $device_id . '\');';
-$query = 'SELECT * FROM dbs12325432.carmesyes_devices';
+// Perform DB request
+$query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(),?,?);';
+$request = $link->prepare($query);
+$request->bind_param('ss', $device_ip, $device_id);
+$result = $request->execute();
 
-$result = $link->query($query);
-printf("Select returned %d rows.\n", $result->num_rows);
+// Parse result
+if ($result === true) {
+    http_response_code(200);
+    echo 'Success';
+    exit();
+}
 
-echo 'ryyy';
-//mysqli_query($link, $query) or die(mysqli_error($link));
-
+// Result was false -> probably tried to add the same entry twice
+echo 'SQL Request error';
+http_response_code(400);
+exit();
 
 ?>
