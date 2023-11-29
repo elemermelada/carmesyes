@@ -2,7 +2,7 @@
 function db_connect()
 {
 
-    $config = json_decode(file_get_contents(__DIR__ . "/db_config.json"), true);
+    $config = json_decode(file_get_contents(__DIR__ . "/../db_config.json"), true);
     $host_name = $config['host_name'];
     $database = $config['database'];
     $user_name = $config['user_name'];

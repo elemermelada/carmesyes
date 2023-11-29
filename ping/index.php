@@ -1,7 +1,7 @@
 <?php
 
 // Connect to DB
-require '../db.php';
+require '../util/db.php';
 $link = db_connect();
 
 // Grab parameters

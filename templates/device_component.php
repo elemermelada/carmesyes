@@ -20,7 +20,5 @@
         </div>
         <span></span>
     </div>
-    <div class='device_widget'>
-        <img height='250px' src='https://upload.wikimedia.org/wikipedia/commons/d/da/Purple_flower_(4764445139).jpg'>
-    </div>
+    <?php call_user_func($render_widget, $widget_args) ?>
 </div>

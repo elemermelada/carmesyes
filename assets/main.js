@@ -8,14 +8,14 @@ function reactive_ui() {
   if (x < y) {
     document.querySelector("body").style.fontSize = "3em";
     document.querySelectorAll(".device_container").forEach((el) => {
-      el.style.gridTemplateRows = "1fr auto";
+      el.style.gridTemplateRows = "auto 1fr";
       el.style.gridTemplateColumns = "1fr";
     });
   } else {
     document.querySelector("body").style.fontSize = "1em";
     document.querySelectorAll(".device_container").forEach((el) => {
       el.style.gridTemplateRows = "1fr";
-      el.style.gridTemplateColumns = "1fr auto";
+      el.style.gridTemplateColumns = "auto 1fr";
     });
   }
 }

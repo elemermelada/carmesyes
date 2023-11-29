@@ -13,12 +13,18 @@
     width:min(90vw, 40em);
     padding: 10px;
     display: grid;
-    grid-template-columns: auto auto;
 }
 
 .device_info {
     display: grid;
     grid-template-rows: 1.2em 1.3em 2.4em auto;
+}
+
+.device_widget {
+    height:200px;
+    margin-left:10px;
+    padding:10px;
+    background-color: #eeeeee;
 }
 
 .device_name {
