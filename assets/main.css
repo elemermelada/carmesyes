@@ -1,0 +1,36 @@
+.main_container {
+    display:flex;
+}
+
+.device_container {
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px gray;
+    width:min(90vw, 40em);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.device_info {
+    display: grid;
+    grid-template-rows: 1.2em 1.3em 1.2em 1.2em auto;
+}
+
+.device_name {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.device_last {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.device_ago {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+}

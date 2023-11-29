@@ -1,30 +1,34 @@
 <?php
 
-if ($_GET['pass']=="lolaso") {
+// Connect to DB
+require './db.php';
+$link = db_connect();
 
-	file_put_contents('log', $_SERVER['REMOTE_ADDR'] . ", " . date("H:i d-m"));
-	echo $_SERVER["REMOTE_ADDR"];
+// Fetch all the devices
+$query = 'SELECT * FROM carmesyes_devices';
+$result = $link->query($query);
+$devices = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+// Render all devices
+echo '<link rel="stylesheet" href="assets/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<body style="background-color:eeeeee;">';
+
+echo '<div class="main_container">';
+foreach ($devices as $device) {
+	render_device($device);
 }
-else if ($_GET['pass']=="lolmao") {
+echo '</div>';
+function render_device($device)
+{
+	$name = $device['name'];
+	$ip = $device['ip'];
+	$last_ping = $device['last_ping'];
+	$ago = floor(abs(strtotime("now") - strtotime($last_ping)) / 60);
 
-	file_put_contents('log2', $_SERVER['REMOTE_ADDR'] . ", " . date("H:i d-m"));
-	echo $_SERVER["REMOTE_ADDR"];
-
-}
-else {
-	
-	$data = file_get_contents('log');
-	$ip = substr($data,0,strpos($data,","));
-	$time = substr($data,strpos($data,","));
-	echo '<a href="http://' . $ip . '">' . $ip . '</a>' . $time . ' <br>';
-
-	$data = file_get_contents('log2');
-	$ip = substr($data,0,strpos($data,","));
-	$time = substr($data,strpos($data,","));
-	echo '<a href="http://' . $ip . '">' . $ip . '</a>' . $time . ' <br>';
-	echo $_SERVER["REMOTE_ADDR"] . ", " . date("H:i d-m");
-	
+	include './templates/device_component.php';
 }
 
 ?>

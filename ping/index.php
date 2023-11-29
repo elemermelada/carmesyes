@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 // Connect to DB
 require '../db.php';
 $link = db_connect();
@@ -18,22 +16,34 @@ if (!is_numeric($device_id)) {
     exit();
 }
 
-// Perform DB request
+// Insert entry in log
 $query = 'INSERT INTO `carmesyes_pinglog` (`date`, `ip`, `device`) VALUES (CURRENT_TIME(),?,?);';
 $request = $link->prepare($query);
 $request->bind_param('ss', $device_ip, $device_id);
 $result = $request->execute();
 
-// Parse result
-if ($result === true) {
-    http_response_code(200);
-    echo 'Success';
+// Result was false -> probably tried to add the same entry twice or used wrong ID
+if ($result === false) {
+    echo 'SQL Request error (1)';
+    http_response_code(400);
     exit();
 }
 
-// Result was false -> probably tried to add the same entry twice
-echo 'SQL Request error';
-http_response_code(400);
+// Now update values in device table
+$query = 'UPDATE `carmesyes_devices` SET `ip` = ?, `last_ping` = CURRENT_TIME() WHERE `id` = ?;';
+$request = $link->prepare($query);
+$request->bind_param('ss', $device_ip, $device_id);
+$result = $request->execute();
+
+// Result was false :(
+if ($result === false) {
+    echo 'SQL Request error (2)';
+    http_response_code(400);
+    exit();
+}
+
+echo 'Success';
+http_response_code(200);
 exit();
 
 ?>
