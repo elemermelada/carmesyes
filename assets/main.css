@@ -18,12 +18,18 @@
 
 .device_info {
     display: grid;
-    grid-template-rows: 1.2em 1.3em 1.2em 1.2em auto;
+    grid-template-rows: 1.2em 1.3em 2.4em auto;
 }
 
 .device_name {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
+}
+
+.time_container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
 }
 
 .device_last {
@@ -35,4 +41,16 @@
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 0.9em;
+}
+
+/* misc */
+.status_indicator_container {
+    display:inline-block;
+}
+.status_indicator {
+    margin-top:-11px;
+    width:0.6em;
+    height:0.6em;
+    border-radius: 0.3em;
+    background-color: red;
 }
