@@ -6,7 +6,7 @@ function reactive_ui() {
     x = win.innerWidth || docElem.clientWidth || body.clientWidth,
     y = win.innerHeight || docElem.clientHeight || body.clientHeight;
   if (x < y) {
-    document.querySelector("body").style.fontSize = "2em";
+    document.querySelector("body").style.fontSize = "3em";
     document.querySelectorAll(".device_container").forEach((el) => {
       el.style.gridTemplateRows = "1fr auto";
       el.style.gridTemplateColumns = "1fr";
