@@ -121,7 +121,7 @@
 .device_widget_wakeup_device_button_container {
     display:flex;
     align-items: center;
-    text-align: center;
+    justify-content: space-evenly;
 }
 
 .device_widget_wakeup_device_name{
