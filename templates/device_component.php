@@ -19,14 +19,14 @@
             </span>
         </div>
         <div class='widget_selector'>
-            <button hx-get="routes/pinglog_widget.php?id=1" hx-target="#widget_<?php echo $device_id; ?>"
-                hx-swap="outerHTML">
+            <button hx-get="routes/pinglog_widget.php?id=<?php echo $device_id; ?>"
+                hx-target="#widget_<?php echo $device_id; ?>" hx-swap="outerHTML">
                 Pinglog
                 <img class="htmx-indicator" width='10px'
                     src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
             </button>
-            <button hx-get="routes/wakeup_widget.php?id=1" hx-target="#widget_<?php echo $device_id; ?>"
-                hx-swap="outerHTML">
+            <button hx-get="routes/wakeup_widget.php?id=<?php echo $device_id; ?>"
+                hx-target="#widget_<?php echo $device_id; ?>" hx-swap="outerHTML">
                 Wakeup
                 <img class="htmx-indicator" width='10px'
                     src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
