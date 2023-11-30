@@ -15,7 +15,7 @@
                 style='font-size:1em;'>
                 Wakeup
                 <span id='wakeup_status_<?php echo $wakeup_device['id']; ?>'></span>
-                <img class="htmx-indicator" style="font-size: 1em;"
+                <img class="htmx-indicator" style="height: 1em;"
                     src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
             </button>
         </div>
