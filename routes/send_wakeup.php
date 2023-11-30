@@ -14,7 +14,7 @@ $device_ip = $device['ip'];
 
 $url = 'http://' . $device_ip . '/' . 'tools/wake.php?addr=' . $mac_address;
 
-$response = '✔️';
+$status = '✔️';
 http_response_code(200);
 $ctx = stream_context_create(
     array(
@@ -26,11 +26,11 @@ $ctx = stream_context_create(
 $response = file_get_contents($url, 0, $ctx);
 
 if (!$response) {
-    $response = '❌';
+    $status = '❌';
     http_response_code(503);
 }
 
-echo $response;
+echo $status;
 exit();
 
 ?>
