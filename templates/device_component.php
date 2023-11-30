@@ -22,13 +22,13 @@
             <button hx-get="routes/pinglog_widget.php?id=<?php echo $device_id; ?>"
                 hx-target="#widget_<?php echo $device_id; ?>" hx-swap="outerHTML">
                 Pinglog
-                <img class="htmx-indicator" height='1em'
+                <img class="htmx-indicator" style="font-size: 1em;"
                     src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
             </button>
             <button hx-get="routes/wakeup_widget.php?id=<?php echo $device_id; ?>"
                 hx-target="#widget_<?php echo $device_id; ?>" hx-swap="outerHTML">
                 Wakeup
-                <img class="htmx-indicator" height='1em'
+                <img class="htmx-indicator" style="font-size: 1em;"
                     src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
             </button>
             <!-- </br>
