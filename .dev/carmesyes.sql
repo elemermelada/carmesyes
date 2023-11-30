@@ -41,9 +41,6 @@ CREATE TABLE `carmesyes_devices` (
 -- Dumping data for table `carmesyes_devices`
 --
 
-INSERT INTO `carmesyes_devices` (`id`, `name`, `ip`, `last_ping`) VALUES
-(1, 'RPi (MAD)', '83.39.228.91', '2023-11-28 19:08:59');
-
 -- --------------------------------------------------------
 
 --
