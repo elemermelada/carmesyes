@@ -22,7 +22,9 @@ function reactive_ui() {
       el.style.gridTemplateRows = "1fr";
       el.style.gridTemplateColumns = "auto 1fr";
     });
-    document.querySelector(".widget_selector").style.flexDirection = "column";
+    document
+      .querySelectorAll(".widget_selector")
+      .forEach((el) => (el.style.flexDirection = "column"));
   }
   // Fix button size
   document
