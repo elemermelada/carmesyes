@@ -108,7 +108,6 @@
     background-color: white;
     border-radius: 5px;
     padding:5px;
-    height:70px;
 
     display:grid;
     grid-template-rows: auto 1fr;
