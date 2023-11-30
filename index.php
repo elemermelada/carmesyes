@@ -24,7 +24,7 @@ echo '<link rel="stylesheet" href="assets/main.css">
 
 echo '<div class="main_container">';
 foreach ($devices as $device) {
-	$pinglog = get_device_pinglog($link, $device['id'], 100);
+	$pinglog = get_device_pinglog($link, $device['id']);
 	render_device($device, 'render_pinglog', $pinglog);
 }
 echo '</div>';
