@@ -3,7 +3,7 @@
         <div class='device_name'>
             <?php echo $name; ?>
             <div class='status_indicator_container'>
-                <div class='status_indicator' style='background-color:<?php echo $response ?>;'></div>
+                <div class='status_indicator' style='background-color:<?php echo $status ?>;'></div>
             </div>
         </div>
         <div class='device_ip'>
