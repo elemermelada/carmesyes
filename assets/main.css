@@ -91,10 +91,10 @@
 
 .device_widget_wakeup {
     overflow: scroll;
-    height:calc(25vh+10px);
+    height:calc(25vh+20px);
     padding:5px;
     display: grid;
-    grid-auto-rows: calc(70px + 2*5px + 2*5px);
+    grid-auto-rows: calc(9vh + 2*5px + 2*5px);
     grid-template-columns: 1fr 1fr;
 }
 
