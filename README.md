@@ -1,9 +1,12 @@
-# carmesyes
- Multi-purpose PHP backend
+# Carmesyes
+### Simple IoT device management back-end.
  
  >Main features:
- >1. IP logger
- >1. Log-based redirectior
+> 1. IP logger
+> 2. Sending "wake-up" calls, or any arbitrary request
+> 1. HTML redirection
+
+![sample](./Showcase.png) 
 
 ---
 
