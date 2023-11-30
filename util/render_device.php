@@ -1,6 +1,7 @@
 <?php
 function render_device($device, $render_widget, $widget_args)
 {
+    $device_id = $device['id'];
     $name = $device['name'];
     $ip = $device['ip'];
     $last_ping = $device['last_ping'];

@@ -1,4 +1,4 @@
-<div class='device_widget' style='overflow: scroll;'>
+<div id='widget_<?php echo $device_id; ?>' class='device_widget device_widget_pinglog'>
     <code>
         <?php
         foreach ($pinglog as $entry) {

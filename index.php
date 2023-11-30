@@ -3,6 +3,7 @@
 // error_reporting(0);
 require './util/render_device.php';
 require './util/render_pinglog.php';
+require './util/render_wakeup.php';
 require './util/queries.php';
 
 // Connect to DB
@@ -16,6 +17,7 @@ $devices = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // Render all devices
 echo '<link rel="stylesheet" href="assets/main.css">
+<script src="https://unpkg.com/htmx.org@1.9.4/dist/htmx.min.js"></script>
 <script type="text/javascript" src="assets/main.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +28,9 @@ echo '<div class="main_container">';
 foreach ($devices as $device) {
 	$pinglog = get_device_pinglog($link, $device['id']);
 	render_device($device, 'render_pinglog', $pinglog);
+
+	// $wakeup_devices = get_device_wakeup_devices($link, $device['id']);
+	// render_device($device, 'render_wakeup', $wakeup_devices);
 }
 echo '</div>';
 ?>

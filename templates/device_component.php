@@ -18,7 +18,27 @@
                 <?php echo '<i>(' . $ago . ' minutes ago)</i>'; ?>
             </span>
         </div>
-        <span></span>
+        <div class='widget_selector'>
+            <button hx-post="/routes/pinglog_widget.php?id=1" hx-target="#widget_<?php echo $device_id; ?>"
+                hx-swap="outerHTML">
+                Pinglog
+                <img class="htmx-indicator" width='10px'
+                    src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
+            </button>
+            <button hx-post="/routes/wakeup_widget.php?id=1" hx-target="#widget_<?php echo $device_id; ?>"
+                hx-swap="outerHTML">
+                Wakeup
+                <img class="htmx-indicator" width='10px'
+                    src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
+            </button>
+            <!-- </br>
+            <button style='margin:auto;' hx-post="/routes/pinglog_widget.php?id=1" hx-target="#widget"
+                hx-swap="outerHTML">
+                Register!
+                <img class="htmx-indicator" width='10px'
+                    src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
+            </button> -->
+        </div>
     </div>
-    <?php call_user_func($render_widget, $widget_args) ?>
+    <?php call_user_func($render_widget, $widget_args, $device_id) ?>
 </div>

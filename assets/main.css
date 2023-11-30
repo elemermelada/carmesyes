@@ -15,22 +15,35 @@
     display: grid;
 }
 
+/* DEVICE INFO */
+
 .device_info {
     display: grid;
     grid-template-rows: 1.2em 1.3em 2.4em auto;
 }
 
-.device_widget {
-    height:200px;
-    margin-left:10px;
-    padding:10px;
-    background-color: #eeeeee;
+/* status indicator */
+
+.status_indicator_container {
+    display:inline-block;
 }
+
+.status_indicator {
+    margin-top:-11px;
+    width:0.6em;
+    height:0.6em;
+    border-radius: 0.3em;
+    background-color: red;
+}
+
+/* device name */
 
 .device_name {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
 }
+
+/* time stuff */
 
 .time_container {
     display: flex;
@@ -49,14 +62,67 @@
     font-size: 0.9em;
 }
 
-/* misc */
-.status_indicator_container {
-    display:inline-block;
+/* widget selector */
+
+.widget_selector {
+    min-height: 2em;
+    display:flex;
+    text-align:center;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.status_indicator {
-    margin-top:-11px;
-    width:0.6em;
-    height:0.6em;
-    border-radius: 0.3em;
-    background-color: red;
+
+/* WIDGET STUFF */
+
+.device_widget {
+    height:200px;
+    margin-left:10px;
+    padding:10px;
+    background-color: #eeeeee;
+}
+
+/* pinglog widget */
+
+.device_widget_pinglog {
+    overflow: scroll;
+}
+
+/* wakeup widget */
+
+.device_widget_wakeup {
+    overflow: scroll;
+    padding:5px;
+    display: grid;
+    grid-auto-rows: calc(70px + 2*5px + 2*5px);
+    grid-template-columns: 1fr 1fr;
+}
+
+.device_widget_wakeup_device_container {
+    /* width:100%; */
+    padding:5px;
+}
+
+.device_widget_wakeup_device {
+    box-shadow: 1px 1px 20px lightgray;
+    background-color: white;
+    border-radius: 5px;
+    padding:5px;
+    height:70px;
+
+    display:grid;
+    grid-template-rows: auto 1fr;
+}
+
+.device_widget_wakeup_device_title {
+
+}
+
+.device_widget_wakeup_device_button_container {
+    display:flex;
+    align-items: center;
+    text-align: center;
+}
+
+.device_widget_wakeup_device_name{
+    font-family: 'Lato', sans-serif;
 }

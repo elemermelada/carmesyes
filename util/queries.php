@@ -12,4 +12,15 @@ function get_device_pinglog($link, $device_id, $limit = 100)
 
     return array_slice($log_array, $size - $limit);
 }
+
+function get_device_wakeup_devices($link, $device_id)
+{
+    $query = 'SELECT * FROM carmesyes_wakeup WHERE `device`=?';
+    $request = $link->prepare($query);
+    $request->bind_param('s', $device_id);
+    $request->execute();
+    $result = $request->get_result();
+
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
 ?>
