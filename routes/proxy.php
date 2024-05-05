@@ -13,6 +13,15 @@ foreach($_GET as $key => $value){
     $url .= $key . "=" . $value . "&";
 }
 
+$opts = array('http' =>
+    array(
+        'method'  => 'POST',
+        'header'  => 'Content-Type: application/x-www-form-urlencoded',
+        'content' => $_POST
+    )
+);
+$context  = stream_context_create($opts);
+
 $result = file_get_contents($url);
 echo $result;
 ?>
