@@ -14,7 +14,6 @@ foreach($_GET as $key => $value){
 }
 
 $content = file_get_contents("php://input");
-var_dump($content);
 
 $opts = array('http' =>
     array(
