@@ -24,6 +24,6 @@ $opts = array('http' =>
 );
 $context  = stream_context_create($opts);
 
-$result = file_get_contents($url);
+$result = file_get_contents($url, false, $context);
 echo $result;
 ?>
