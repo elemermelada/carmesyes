@@ -13,11 +13,14 @@ foreach($_GET as $key => $value){
     $url .= $key . "=" . $value . "&";
 }
 
+$content = file_get_contents("php://input");
+$decoded = json_decode($content, true);
+
 $opts = array('http' =>
     array(
         'method'  => 'POST',
         'header'  => 'Content-Type: application/x-www-form-urlencoded',
-        'content' => http_build_query($_POST)
+        'content' => http_build_query($decoded)
     )
 );
 $context  = stream_context_create($opts);
