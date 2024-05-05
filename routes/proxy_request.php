@@ -15,6 +15,6 @@ foreach($_GET as $key => $value){
 
 $result = file_get_contents($url);
 
-$output = array("url"=>$url, "result"=>$result);
-echo json_encode($output);
+//$output = array("url"=>$url, "result"=>$result);
+echo json_encode($result);
 ?>
