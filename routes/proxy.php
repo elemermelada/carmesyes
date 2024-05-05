@@ -17,7 +17,7 @@ $opts = array('http' =>
     array(
         'method'  => 'POST',
         'header'  => 'Content-Type: application/x-www-form-urlencoded',
-        'content' => $_POST
+        'content' => http_build_query($_POST)
     )
 );
 $context  = stream_context_create($opts);
